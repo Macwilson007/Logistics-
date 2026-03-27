@@ -1,0 +1,277 @@
+/* ========================================
+   TRACK PAGE STYLES
+   ======================================== */
+
+.track-page {
+  min-height: 80vh;
+  background-color: #fcfcfc;
+}
+
+/* Hero */
+.track-hero {
+  background: linear-gradient(135deg, #111111 0%, #333333 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  color: white;
+}
+
+.track-hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.track-hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.track-search-box {
+  display: flex;
+  gap: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.track-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.track-input-wrapper svg {
+  position: absolute;
+  left: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.track-input {
+  width: 100%;
+  padding: 14px 14px 14px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.track-input:focus {
+  border-color: #FFCC00;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Results Container */
+.track-results-container {
+  padding: 60px 0;
+}
+
+.track-result-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.track-result-header {
+  padding: 32px;
+  background: #F9FAFB;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.track-id .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.track-id .value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111;
+  font-family: inherit;
+}
+
+.track-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #E8F5E9;
+  color: #2E7D32;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.track-status-badge.in-transit {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+/* Summary Info */
+.track-summary-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 32px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-item .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.summary-item .value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Timeline */
+.track-timeline {
+  padding: 32px;
+}
+
+.timeline-title-main {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.timeline-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item-new {
+  display: flex;
+  gap: 24px;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 32px;
+}
+
+.marker-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  z-index: 1;
+}
+
+.marker-dot.completed {
+  background: #2E7D32;
+  color: white;
+}
+
+.marker-dot.active {
+  background: #D40511;
+  color: white;
+  box-shadow: 0 0 0 4px rgba(212, 5, 17, 0.2);
+}
+
+.marker-line {
+  width: 2px;
+  background: #eee;
+  flex-grow: 1;
+  margin: 4px 0;
+}
+
+.timeline-item-new.completed .marker-line {
+  background: #2E7D32;
+}
+
+.timeline-text {
+  padding-bottom: 40px;
+  flex-grow: 1;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.status-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #111;
+}
+
+.status-time {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.location-row {
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.detail-row {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* Animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .track-hero-title { font-size: 2rem; }
+  .track-search-box { flex-direction: column; padding: 16px; }
+  .track-summary-info { grid-template-columns: 1fr; gap: 20px; }
+  .track-result-header { flex-direction: column; align-items: flex-start; }
+}

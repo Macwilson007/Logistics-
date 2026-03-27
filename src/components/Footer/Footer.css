@@ -1,0 +1,159 @@
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+
+.footer {
+  margin-top: auto;
+}
+
+.footer-top {
+  background: var(--color-charcoal);
+  padding: var(--space-16) 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-10);
+}
+
+.footer-col-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-5);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32px;
+  height: 3px;
+  background: var(--color-brand-red);
+  border-radius: var(--radius-full);
+}
+
+.footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer-link {
+  font-size: var(--text-sm);
+  color: var(--color-gray-400);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--color-white);
+  transform: translateX(4px);
+}
+
+/* Bottom bar */
+.footer-bottom {
+  background: var(--color-black);
+  padding: var(--space-5) 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-logo-text {
+  font-size: var(--text-lg);
+  font-weight: 900;
+  color: var(--color-brand-yellow);
+  letter-spacing: 0.06em;
+}
+
+.footer-logo-dot {
+  font-size: var(--text-xl);
+  font-weight: 900;
+  color: var(--color-brand-red);
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.footer-meta-link {
+  font-size: var(--text-xs);
+  color: var(--color-gray-500);
+  transition: color var(--transition-fast);
+}
+
+.footer-meta-link:hover {
+  color: var(--color-white);
+}
+
+.footer-copyright {
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-gray-400);
+  transition: all var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-top {
+    padding: var(--space-10) 0;
+  }
+}
