@@ -1,9 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
-const prisma = new PrismaClient({
-  datasourceUrl: process.env.DATABASE_URL || 'file:./dev.db',
-});
+const prisma = new PrismaClient();
 
 async function main() {
   const adminPassword = await bcrypt.hash('admin123', 12);
