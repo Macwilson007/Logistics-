@@ -1,45 +1,10 @@
 import type { NextAuthConfig } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-import prisma from "@/lib/prisma";
 
 export const authConfig = {
   session: { strategy: "jwt" },
   pages: {
     signIn: "/login",
   },
-  providers: [
-    Credentials({
-      name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) return null;
-
-        const user = await prisma.user.findUnique({
-          where: { email: credentials.email as string },
-        });
-
-        if (!user || !user.password) return null;
-
-        const isPasswordValid = await bcrypt.compare(
-          credentials.password as string,
-          user.password
-        );
-
-        if (!isPasswordValid) return null;
-
-        return {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          role: user.role,
-        };
-      },
-    }),
-  ],
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -55,4 +20,5 @@ export const authConfig = {
       return session;
     },
   },
+  providers: [], // Providers will be added in the full auth.ts to avoid Edge Runtime issues
 } satisfies NextAuthConfig;
