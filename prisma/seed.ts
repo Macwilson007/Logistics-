@@ -2,11 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: process.env.DATABASE_URL || 'file:./dev.db',
-    },
-  },
+  datasourceUrl: process.env.DATABASE_URL || 'file:./dev.db',
 });
 
 async function main() {
