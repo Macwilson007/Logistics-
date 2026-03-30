@@ -34,6 +34,12 @@ const defaultServicesData: Record<string, { title: string; subtitle: string; ico
   },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(defaultServicesData).map((serviceId) => ({
+    serviceId: serviceId,
+  }));
+}
+
 export default async function ServicePage({ params }: { params: Promise<{ serviceId: string }> }) {
   const { serviceId } = await params;
   

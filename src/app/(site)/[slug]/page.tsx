@@ -22,6 +22,12 @@ const defaultPageData: Record<string, { title: string; subtitle: string }> = {
   'find-location': { title: 'Find a Location', subtitle: 'Locate a drop-off point or service center near you.' },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(defaultPageData).map((slug) => ({
+    slug: slug,
+  }));
+}
+
 export default async function GenericPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 

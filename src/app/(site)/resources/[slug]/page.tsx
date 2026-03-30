@@ -24,6 +24,12 @@ const defaultResourcesData: Record<string, { title: string; subtitle: string; ic
   },
 };
 
+export async function generateStaticParams() {
+  return Object.keys(defaultResourcesData).map((slug) => ({
+    slug: slug,
+  }));
+}
+
 export default async function ResourcePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   

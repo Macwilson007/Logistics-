@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import TrackPage from "@/components/Track/TrackPage";
 import type { Metadata } from "next";
 
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <TrackPage />;
+  return (
+    <Suspense fallback={<div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>}>
+      <TrackPage />
+    </Suspense>
+  );
 }
